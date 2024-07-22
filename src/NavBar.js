@@ -5,15 +5,15 @@ import logoImage from './Designer.png'
 const NavBar = ({ state }) => {
     const dispatch = useDispatch();
     const [dataObj, setDataObj] = useState({
-        query: ''
+        query: 'motivational thoughts'
     });
 
     const getImages = () => {
         const params = {
             client_id: process.env.REACT_APP_UNSPLASH_API_KEY,
-            page: 10,
-            per_page: 200,
-            query: dataObj.query || "motivational thoughts"
+            page: 1,
+            per_page: 20,
+            query: dataObj?.query
         };
 
         const queryString = Object.keys(params)
