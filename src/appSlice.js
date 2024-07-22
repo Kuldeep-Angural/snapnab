@@ -4,6 +4,7 @@ import { createObject } from './api';
 const initialState = {
   loading: false,
   data: [],
+  options:{}
 };
 
 export const getAllImages = createAsyncThunk('app/unSplash/', async (payload) => {
@@ -35,6 +36,8 @@ const appSlice = createSlice({
             })),
             totalPages: data.total_pages || 0,
             totalItems: data.total || data.length || 0,
+            state.options={totalPages , totalItems}
+            console.log(totalPages , totalItems);
           };
           state.data = mappedResults;
         }
@@ -43,5 +46,7 @@ const appSlice = createSlice({
 });
 
 export const selectData = (state) => state.app.data;
+export const selectOptions = (state) => state.app.options;
+
 
 export default appSlice.reducer;
