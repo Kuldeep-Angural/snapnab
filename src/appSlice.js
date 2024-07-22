@@ -36,9 +36,10 @@ const appSlice = createSlice({
             })),
             totalPages: data.total_pages || 0,
             totalItems: data.total || data.length || 0,
-            state.options:{totalPages , totalItems}
             console.log(totalPages , totalItems);
           };
+          state.options={totalPages:data.total_pages  , totalItems:data.total||data.length}
+
           state.data = mappedResults;
         }
       });
