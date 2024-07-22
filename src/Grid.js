@@ -17,6 +17,7 @@ function Grid() {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    console.log(state);
     return (
         <>
             {currentItems?.length > 0 && (
