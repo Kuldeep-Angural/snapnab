@@ -3,11 +3,12 @@ import NavBar from "./NavBar";
 import "./App.css"; // Assuming you have an App.css file for styles
 import { Provider, useSelector } from "react-redux";
 import { store } from "./store";
-import { selectData } from "./appSlice";
+import { selectData  , selectOptions} from "./appSlice";
 
 function Grid() {
     const state = useSelector(selectData);
     const [currentPage, setCurrentPage] = useState(1);
+    const options = useSelector(selectOptions)
     const [itemsPerPage, setItemsPerPage] = useState(10); // Number of items per page
 
     // Calculate the indexes of items to display on the current page
@@ -17,7 +18,7 @@ function Grid() {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    console.log(state);
+    console.log(state , options);
     return (
         <>
             {currentItems?.length > 0 && (
