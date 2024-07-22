@@ -44,7 +44,7 @@ function Grid() {
                 <nav className="text-center">
                     <ul className="pagination text-center">
                         {state.data?.length > 0 && (
-                            Array.from({ length: Math.ceil(state.data.length / itemsPerPage) }).map((_, index) => (
+                            Array.from({ length: Math.ceil(options?.totalItems / itemsPerPage) }).map((_, index) => (
                                 <li key={index} className="page-item">
                                     <button onClick={() => paginate(index + 1)} className="page-link">{index + 1}</button>
                                 </li>
