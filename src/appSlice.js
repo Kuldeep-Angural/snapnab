@@ -39,7 +39,6 @@ const appSlice = createSlice({
             totalPages: data.total_pages || 0,
             totalItems: data.total || data.length || 0,
           };
-          console.log(data , mappedResults)
           state.data = mappedResults;
           state.options={totalPages:total_pages  , totalItems:totalItems}
         }
