@@ -4,8 +4,9 @@ export const createObject = async (queryString) => {
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }
-        console.log("response",response.json());
-        return response.json(); // Assuming response is JSON data
+        const res = await response.json(); 
+        console.log("response",res);
+        return res 
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error; 
