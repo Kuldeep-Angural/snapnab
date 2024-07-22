@@ -24,7 +24,7 @@ const appSlice = createSlice({
       .addCase(getAllImages.fulfilled, (state, action) => {
         state.loading = false;
         const data = action?.payload.length > 0 ? action?.payload : action?.payload?.results.length > 0 ? action?.payload?.results : [];
-        const total_pages = action?.payload?.total_pages;||0
+        const total_pages = action?.payload?.total_pages||0
         const totalItems = action?.payload?.total||0
         if (data?.length > 0) {
           const mappedResults = {
